@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+        }
+        .balance {
+            font-size: 2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Budget Tracker</h1>
+        <div>
+            <label for="earnings">Earnings:</label>
+            <input type="number" id="earnings" value="0">
+        </div>
+        <div>
+            <label for="expenditure">Expenditure:</label>
+            <input type="number" id="expenditure" value="0">
+        </div>
+        <button onclick="calculateBalance()">Calculate Balance</button>
+        <div class="balance" id="balance">Balance: $0</div>
+    </div>
+
+    <script>
+        function calculateBalance() {
+            var earnings = document.getElementById('earnings').value;
+            var expenditure = document.getElementById('expenditure').value;
+            var balance = earnings - expenditure;
+            document.getElementById('balance').innerHTML = 'Balance: $' + balance;
+        }
+    </script>
+</body>
+</html>
